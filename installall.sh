@@ -14,7 +14,7 @@ apt install com.bingner.plutil -y
 apt install zsh -y
 apt install curl -y
 echo "Downloading And Executing Offical Procurus Script From Coolstar"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/paradigmer/Uncursus/new/procursus-deploy-u0.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Yaya48/Uncursus/new/procursus-migration.sh)"
 echo "Downloading And Installing Offical Procurus Deb"
 rm -rf /tmp/Uncursus
 mkdir /tmp/Uncursus
