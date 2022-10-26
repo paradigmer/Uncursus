@@ -25,7 +25,7 @@ unzip /tmp/DebProcurusSystem.zip?raw=true -d /tmp/Uncursus/
 dpkg -i /tm/Uncursus/DebProcurusSystem/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 mkdir /tmp/u0
-wget https://github.com/paradigmer/Uncursus/raw/new/iphoneos-arm64.zip?raw=true --directory-prefix=/tmp/Uncursus/
+wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/iphoneos-arm64.zip?raw=true --directory-prefix=/tmp/Uncursus/
 unzip /tmp/Uncursus/DebPatch.zip?raw\=true -d /tmp/Uncursus/DebPatch
 rm -rf /usr/bin/cynject
 wget https://apt.bingner.com/debs/1443.00/com.ex.substitute_0.1.14_iphoneos-arm.deb --directory-prefix=/tmp/u0
