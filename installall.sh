@@ -20,13 +20,13 @@ rm -rf /tmp/Uncursus
 mkdir /tmp/Uncursus
 apt update
 apt install wget -y --allow-unauthenticated
-wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip --directory-prefix=/tmp/Uncursus/
-unzip /tmp/DebProcurusSystem.zip -d /tmp/Uncursus/
+wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip?raw=true --directory-prefix=/tmp/Uncursus/
+unzip /tmp/DebProcurusSystem.zip?raw=true?raw=true -d /tmp/Uncursus/
 dpkg -i /tm/Uncursus/DebProcurusSystem/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 mkdir /tmp/u0
-wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebPatch.zip --directory-prefix=/tmp/Uncursus/
-unzip /tmp/Uncursus/DebPatch.zip -d /tmp/Uncursus/DebPatch
+wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebPatch.zip?raw=true --directory-prefix=/tmp/Uncursus/
+unzip /tmp/Uncursus/DebPatch.zip?raw\=true -d /tmp/Uncursus/DebPatch
 rm -rf /usr/bin/cynject
 wget https://apt.bingner.com/debs/1443.00/com.ex.substitute_0.1.14_iphoneos-arm.deb --directory-prefix=/tmp/u0
 wget https://apt.bingner.com/debs/1443.00/com.saurik.substrate.safemode_0.9.6003_iphoneos-arm.deb --directory-prefix=/tmp/Uncursus/u0
@@ -41,7 +41,7 @@ dpkg -i --force-all /tmp/Uncursus/u0/*.deb
 echo "Done. Running Firmware Configuration (./firmware.sh)"
 /usr/libexec/firmware
 echo "BootStrap Installions Done. The Installer Clean The Installions"
-rm -rf /User/Documents/Uncursus/
+rm -rf /tmp/Uncursus/
 rm /etc/apt/sources.list.d/odyssey.sources
 echo "All Done."
 rm -rf /Aplications/Cydia.app
