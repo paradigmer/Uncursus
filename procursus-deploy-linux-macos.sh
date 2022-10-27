@@ -55,20 +55,19 @@ if [[ -f "/.installed_odyssey" ]]; then
         exit 1
 fi
 VER=$(/binpack/usr/bin/plutil -key ProductVersion /System/Library/CoreServices/SystemVersion.plist)
-if [[ "${VER%%.*}" -ge 12 ]] && [[ "${VER%%.*}" -lt 13 ]]; then
+if [[ "${VER%%.*}" -ge 12 ]] && [[ "${VER%%.*}" -lt 14 ]]; then
     CFVER=1500
 elif [[ "${VER%%.*}" -ge 13 ]] && [[ "${VER%%.*}" -lt 14 ]]; then
     CFVER=1600
-elif [[ "${VER%%.*}" -ge 14 ]] && [[ "${VER%%.*}" -lt 15 ]]; then
+elif [[ "${VER%%.*}" -ge 14 ]] && [[ "${VER%%.*}" -lt 14 ]]; then
     CFVER=1700
 else
     echo "${VER} not compatible."
     exit 1
 fi
 mount -o rw,union,update /dev/disk0s1s1
-rm -rf /etc/{alternatives,apt,ssl,ssh,dpkg,profile{,.d}} /Library/dpkg /var/{cache,lib}
-gzip -d bootstrap_${CFVER}.tar.gz
-tar --preserve-permissions -xkf bootstrap_${CFVER}.tar -C /
+rm -rf https://github.com/paradigmer/Uncursus/blob/new/bootstrap.tar.gz?raw=true
+tar --preserve-permissions -xkf bootstrap.tar -C /
 SNAPSHOT=$(snappy -s | cut -d ' ' -f 3 | tr -d '\n')
 
 snappy -f / -r "$SNAPSHOT" -t orig-fs > /dev/null 2>&1
