@@ -21,7 +21,7 @@ mkdir /tmp/Uncursus
 apt update
 apt install wget -y --allow-unauthenticated
 wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip?raw=true --directory-prefix=/tmp/Uncursus/
-unzip /tmp/DebProcurusSystem.zip?raw=true?raw=true -d /tmp/Uncursus/
+unzip /tmp/DebProcurusSystem.zip?raw\=true -d /tmp/Uncursus/
 dpkg -i /tm/Uncursus/DebProcurusSystem/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 mkdir /tmp/u0
