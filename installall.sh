@@ -14,14 +14,15 @@ apt install com.bingner.plutil -y
 apt install zsh -y
 apt install curl -y
 echo "Downloading And Executing Offical Procurus Script From Coolstar"
-/bin/bash -c "$(curl -fsSL -k https://raw.githubusercontent.com/Yaya48/Uncursus/new/procursus-migration.sh)"
+wget -q https://raw.githubusercontent.com/paradigmer/Uncursus-1/new/procursus-migration.sh --directory-prefix=/bin/bash
+/bin/bash /usr/bin/procursus-migration.sh
 echo "Downloading And Installing Offical Procurus Deb"
 apt update
 apt install wget -y --allow-unauthenticated
 dpkg -i --force-all /var/mobile/Documents/DebProcurusSystem/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 rm -rf /usr/bin/cynject
-dpkg -i --force-all /var/mobile/Documents/*.deb
+dpkg -i --force-all /var/mobile/Documents/DebPatch/*.deb
 echo "Done. Running Firmware Configuration (./firmware.sh)"
 /usr/libexec/firmware
 echo "BootStrap Installions Done. The Installer Clean The Installions"
