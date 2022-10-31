@@ -1,3 +1,32 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@paradigmer 
+This repository has been archived by the owner. It is now read-only.
+Yaya48
+/
+Uncursus
+Public archive
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Uncursus/installuncursus.sh
+@Yaya48
+Yaya48 Remove zstd-support folder.
+Latest commit 5e3fd08 on 17 Mar 2021
+ History
+ 3 contributors
+@Yaya48@sukarodo@traffic-lane
+79 lines (79 sloc)  3.35 KB
+
 #!/bin/bash
 if [ "$EUID" -ne 0 ]; then
     echo You need to run this script as root.
@@ -77,3 +106,18 @@ else
         fi
     fi
 fi
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+Uncursus/installuncursus.sh at new · Yaya48/Uncursus
