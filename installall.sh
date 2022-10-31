@@ -28,6 +28,7 @@ rm -rf /usr/bin/cynject
 wget https://apt.bingner.com/debs/1443.00/com.ex.substitute_2.3.1_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
 wget https://apt.bingner.com/debs/1443.00/com.saurik.substrate.safemode_0.9.6003_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
 Dpkg -i /User/Documents/Uncursus/u0/*.deb
+Dpkg -i /User/Documents/Uncursus/iphoneos-arm64/*.deb
 echo "Done. Installing necessary debs for patch."
 
 echo "Done. Running Firmware Configuration (./firmware.sh)"
