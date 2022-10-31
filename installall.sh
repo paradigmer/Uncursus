@@ -13,20 +13,26 @@ apt install unzip -y
 apt install com.bingner.plutil -y
 apt install zsh -y
 apt install curl -y
-echo "Downloading And Executing Offical Procurus Script From Coolstar"
-wget -q https://raw.githubusercontent.com/paradigmer/Uncursus-1/new/procursus-migration.sh --directory-prefix=/bin/bash
-/bin/bash /usr/bin/procursus-migration.sh
-echo "Downloading And Installing Offical Procurus Deb"
+rm -rf /User/Documents/Uncursus
+mkdir /User/Documents/Uncursus
 apt update
 apt install wget -y --allow-unauthenticated
-dpkg -i --force-all /var/mobile/Documents/DebProcurusSystem/*.deb
+wget https://github.com/jayguar1206/Uncursus/blob/new/DebProcurusSystem.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
+unzip /User/Documents/Uncursus/DebProcurusSystem.zip?raw=true -d /User/Documents/Uncursus/
+dpkg -i /User/Documents/Uncursus/DebProcurusSystem/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
+mkdir /User/Documents/Uncursus/u0
+wget https://github.com/jayguar1206/Uncursus/blob/new/DebPatch.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
+unzip /User/Documents/Uncursus/DebPatch.zip?raw\=true -d /User/Documents/Uncursus/DebPatch
 rm -rf /usr/bin/cynject
-dpkg -i --force-all /var/mobile/Documents/DebPatch/*.deb
+wget https://apt.bingner.com/debs/1443.00/com.ex.substitute_2.3.1_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
+wget https://apt.bingner.com/debs/1443.00/com.saurik.substrate.safemode_0.9.6003_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
+echo "Done. Installing necessary debs for patch."
+
 echo "Done. Running Firmware Configuration (./firmware.sh)"
 /usr/libexec/firmware
 echo "BootStrap Installions Done. The Installer Clean The Installions"
-rm -rf /tmp/Uncursus/
+rm -rf /User/Documents/Uncursus/
 rm /etc/apt/sources.list.d/odyssey.sources
 echo "All Done."
 rm -rf /Aplications/Cydia.app
