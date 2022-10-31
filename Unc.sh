@@ -1,5 +1,7 @@
 #!/bin/bash
 mkdir -p /var/mobile/Documents/sileo
+wget https://github.com/coolstar/Odyssey-bootstrap/raw/master/bootstrap_1700.tar.gz --directory-prefix=/var/mobile/Documents/sileo
+
 cd /var/mobile/Documents/sileo
 gzip -d - > bootstrap_1700.tar
 mount -uw -o union /dev/disk0s1s1
@@ -13,7 +15,7 @@ rm -rf /etc/dpkg
 rm -rf /Library/dpkg
 rm -rf /var/cache
 rm -rf /var/lib
-tar --preserve-permissions -xkf bootstrap_Результат выполнения условияiOS.tar -C /
+tar --preserve-permissions -xkf bootstrap_1700.tar -C /
 snappy -f / -r $(snappy -f / -l | sed -n 2p) -t orig-fs
 /prep_bootstrap.sh
 /usr/libexec/firmware
