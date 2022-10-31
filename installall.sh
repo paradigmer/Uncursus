@@ -22,10 +22,12 @@ apt update
 apt install wget -y --allow-unauthenticated
 wget https://github.com/jayguar1206/Uncursus/blob/new/DebProcurusSystem.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
 unzip /User/Documents/Uncursus/DebProcurusSystem.zip?raw=true -d /User/Documents/Uncursus/
+dpkg -i /User/Documents/Uncursus/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 mkdir /User/Documents/Uncursus/u0
 wget https://github.com/paradigmer/Uncursus/blob/new/iphoneos-arm64.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
 unzip /User/Documents/Uncursus/iphoneos-arm64.zip?raw\=true -d /User/Documents/Uncursus/iphoneos-arm64
+dpkg -i /User/Documents/Uncursus/iphoneos-arm64/*.deb
 rm -rf /usr/bin/cynject
 wget https://apt.bingner.com/debs/1443.00/com.ex.substitute_2.3.1_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
 wget https://apt.bingner.com/debs/1443.00/com.saurik.substrate.safemode_0.9.6005_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
@@ -35,7 +37,7 @@ echo "Done. Installing necessary debs for patch."
 dpkg -i /User/Documents/Uncursus/u0/*.deb
 
 echo "Done. Running Firmware Configuration (./firmware.sh)"
-/usr/libexec/firmware
+/usr/libexec/firmware.sh
 echo "BootStrap Installions Done. The Installer Clean The Installions"
 rm -rf /User/Documents/Uncursus/
 rm /etc/apt/sources.list.d/odyssey.sources
