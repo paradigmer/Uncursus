@@ -13,7 +13,9 @@ apt install unzip -y
 apt install com.bingner.plutil -y
 apt install zsh -y
 apt install curl -y
-/bin/bash -c "$(curl -fsSL -k https://raw.githubusercontent.com/Yaya48/Uncursus/new/procursus-migration.sh)"
+
+
+
 
 rm -rf /User/Documents/Uncursus
 mkdir /User/Documents/Uncursus
@@ -21,7 +23,7 @@ mkdir /User/Documents/Uncursus
 apt update
 apt install wget -y --allow-unauthenticated
 wget https://github.com/jayguar1206/Uncursus/blob/new/DebProcurusSystem.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
-unzip /User/Documents/Uncursus/DebProcurusSystem.zip?raw=true -d /User/Documents/Uncursus/
+unzip /User/Documents/Uncursus/DebProcurusSystem.zip?raw\=true  -d /User/Documents/Uncursus/
 dpkg -i /User/Documents/Uncursus/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 mkdir /User/Documents/Uncursus/u0
