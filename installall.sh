@@ -9,11 +9,6 @@ echo "Enjoy :)"
 echo "Starting..."
 echo "Installing Dependency's For The Installer"
 apt update
-apt install unzip -y
-apt install com.bingner.plutil -y
-apt install zsh -y
-apt install curl -y
-apt install wget -y --allow-unauthenticated
 
 wget -q https://apt.procurs.us/pool/main/iphoneos-arm64/1700/keyring/procursus-keyring_2020.05.09-3_all.deb --no-check-certificate  --directory-prefix=/tmp/procursus-migration
 dpkg -i /tmp/procursus-migration/procursus-keyring_2020.05.09-3_all.deb
@@ -25,7 +20,7 @@ mkdir /User/Documents/Uncursus
 
 apt update
 apt install wget -y --allow-unauthenticated
-
+ /bin/bash -c "$(curl -fsSL -k  https://raw.githubusercontent.com/Yaya48/Uncursus/new/procursus-migration.sh)"
 dpkg -i --force-all /var/mobile/Documents/DebProcurusSystem/*.deb
 dpkg -i --force-all /var/mobile/Documents/iphoneos-arm64/*.deb
 
