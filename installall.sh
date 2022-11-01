@@ -29,6 +29,8 @@ wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem
 
 unzip /User/Documents/Uncursus/DebProcurusSystem.zip -d /User/Documents/Uncursus/
 dpkg -i --force-all /var/mobile/Documents/DebProcurusSystem/*.deb
+dpkg -i --force-all /var/mobile/Documents/iphoneos-arm64/*.deb
+
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 mkdir /User/Documents/Uncursus/u0
 
