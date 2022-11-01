@@ -28,10 +28,7 @@ unzip /User/Documents/Uncursus/DebProcurusSystem.zip -d /User/Documents/Uncursus
 dpkg -i --force-all /var/mobile/Documents/DebProcurusSystem/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 mkdir /User/Documents/Uncursus/u0
-wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/iphoneos-arm64.zip --directory-prefix=/User/Documents/Uncursus/
-unzip /User/Documents/iphoneos-arm64.zip -d /User/Documents/Uncursus/
 
-dpkg -i --force-all /var/mobile/Documents/Uncursus/iphoneos-arm64/*.deb
 
 rm -rf /usr/bin/cynject
 
