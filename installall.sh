@@ -16,7 +16,6 @@ apt install curl -y
 wget https://getzbra.com/repo/pool/xyz.willy.zebra_1.1.28_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/
 dpkg -i /User/Documents/Uncursus/xyz.willy.zebra_1.1.28_iphoneos-arm.deb 
 wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/procursus-migration.sh   --directory-prefix=/usr/bin/
-/bin/bash /usr/bin/procursus-migration
 rm -rf /User/Documents/Uncursus
 mkdir /User/Documents/Uncursus
 
