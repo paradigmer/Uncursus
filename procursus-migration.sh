@@ -91,3 +91,5 @@ else
     }
     checkDependencies || ErrorHandler
     checkiOSVersion
+    
+fi
