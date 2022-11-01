@@ -22,25 +22,23 @@ mkdir /User/Documents/Uncursus
 
 apt update
 apt install wget -y --allow-unauthenticated
-wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip --directory-prefix=/User/Documents/Uncursus/
+wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
 
-unzip /User/Documents/Uncursus/DebProcurusSystem.zip  -d /User/Documents/Uncursus/
+unzip /User/Documents/Uncursus/DebProcurusSystem.zip?raw\=true  -d /User/Documents/Uncursus/
 dpkg -i /User/Documents/Uncursus/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 mkdir /User/Documents/Uncursus/u0
-wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/iphoneos-arm64.zip --directory-prefix=/User/Documents/Uncursus/
-unzip /User/Documents/Uncursus/iphoneos-arm64.zip -d /User/Documents/Uncursus/iphoneos-arm64
+wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/iphoneos-arm64.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
+unzip /User/Documents/Uncursus/iphoneos-arm64.zip?raw\=true -d /User/Documents/Uncursus/
 dpkg -i /User/Documents/Uncursus/iphoneos-arm64/*.deb
 rm -rf /usr/bin/cynject
-wget https://apt.bingner.com/debs/1443.00/com.ex.substitute_2.3.1_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
-wget https://apt.bingner.com/debs/1443.00/com.saurik.substrate.safemode_0.9.6005_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
-dpkg  -i /User/Documents/Uncursus/iphoneos-arm64/*.deb
+
 echo "Done. Installing necessary debs for patch."
 
-dpkg -i /User/Documents/Uncursus/u0/*.deb
+
 
 echo "Done. Running Firmware Configuration (./firmware.sh)"
-/usr/libexec/firmware.sh
+/usr/libexec/firmware
 echo "BootStrap Installions Done. The Installer Clean The Installions"
 rm -rf /User/Documents/Uncursus/
 rm /etc/apt/sources.list.d/odyssey.sources
