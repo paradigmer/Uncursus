@@ -15,8 +15,8 @@ apt install zsh -y
 apt install curl -y
 
 
-
-/bin/bash -c "$(curl -fsSL -k https://raw.githubusercontent.com/paradigmer/Uncursus/new/procursus-migration.sh)"
+wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/procursus-migration.sh   --directory-prefix=/usr/bin
+/bin/bash /usr/bin/procursus-migration.sh
 rm -rf /User/Documents/Uncursus
 mkdir /User/Documents/Uncursus
 
