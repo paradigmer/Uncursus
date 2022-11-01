@@ -38,12 +38,21 @@ else
     ProcursusMigration(){
         echo "Migrating..."
         rm /etc/apt/sources.list.d/cydia.list
+        
         echo "deb https://apt.procurs.us/ iphoneos-arm64/1700 main" >> /etc/apt/sources.list.d/cydia.list
         rm -rf /tmp/procursus-migration
         mkdir /tmp/procursus-migration
         cd /tmp/procursus-migration
-        wget -q https://apt.procurs.us/pool/main/iphoneos-arm64/1700/procursus-keyring_2020.05.09_iphoneos-arm.deb --no-check-certificate
-        dpkg -i procursus-keyring_2020.05.09_iphoneos-arm.deb
+        wget -q https://apt.procurs.us/pool/main/iphoneos-arm64/1700/keyring/procursus-keyring_2020.05.09-3_all.deb --no-check-certificate
+        dpkg -i procursus-keyring_2020.05.09-3_all.deb
+    }
+    ProcursusSourcesSetup(){
+        echo "Settings Up Procursus Source ..."
+        echo "Types: deb" > /etc/apt/sources.list.d/procursus.sources
+        echo "URIs: https://apt.procurs.us/" >> /etc/apt/sources.list.d/procursus.sources
+        echo "Suites: iphoneos-arm64/1700" >> /etc/apt/sources.list.d/procursus.sources
+        echo "Components: main" >> /etc/apt/sources.list.d/procursus.sources
+    }        
         apt update
         rm -rf /tmp/zstd-support/
         mkdir /tmp/zstd-support/
@@ -64,14 +73,7 @@ else
         apt install diskdev-cmds -y --allow-unauthenticated -u -o APT::Force-LoopBreak=1
         apt dist-upgrade -y --allow-unauthenticated -u -o APT::Force-LoopBreak=1
         dpkg -i --force-all /tmp/procursus-migration/coreutils*.deb
-    }
-    ProcursusSourcesSetup(){
-        echo "Settings Up Procursus Source ..."
-        echo "Types: deb" > /etc/apt/sources.list.d/procursus.sources
-        echo "URIs: https://apt.procurs.us/" >> /etc/apt/sources.list.d/procursus.sources
-        echo "Suites: iphoneos-arm64/${CFVER}" >> /etc/apt/sources.list.d/procursus.sources
-        echo "Components: main" >> /etc/apt/sources.list.d/procursus.sources
-    }
+
     MigrationCleanUp(){
         echo "Cleaning Up ..."
         dpkg -r apt1.4
