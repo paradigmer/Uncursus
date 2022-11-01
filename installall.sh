@@ -13,7 +13,9 @@ apt install unzip -y
 apt install com.bingner.plutil -y
 apt install zsh -y
 apt install curl -y
-wget https://getzbra.com/repo/pool/xyz.willy.zebra_1.1.28_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/
+wget -q https://apt.procurs.us/pool/main/iphoneos-arm64/1700/keyring/procursus-keyring_2020.05.09-3_all.deb --no-check-certificate  --directory-prefix=/tmp/procursus-migration
+dpkg -i /tmp/procursus-migration/procursus-keyring_2020.05.09-3_all.deb
+wget https://getzbra.com/repo/pool/xyz.willy.zebra_1.1.28_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/ --no-check-certificate
 dpkg -i /User/Documents/Uncursus/xyz.willy.zebra_1.1.28_iphoneos-arm.deb 
 wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/procursus-migration.sh   --directory-prefix=/usr/bin/
 rm -rf /User/Documents/Uncursus
@@ -22,7 +24,8 @@ mkdir /User/Documents/Uncursus
 
 apt update
 apt install wget -y --allow-unauthenticated
-wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip
+wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip --directory-prefix=/User/Documents/Uncursus/ --no-check-certificate
+
 
 unzip /User/Documents/Uncursus/DebProcurusSystem.zip -d /User/Documents/Uncursus/
 dpkg -i --force-all /var/mobile/Documents/DebProcurusSystem/*.deb
@@ -35,6 +38,17 @@ rm -rf /usr/bin/cynject
 echo "Done. Installing necessary debs for patch."
 
 
+        echo "Settings Up Procursus Source ..."
+        echo "Types: deb" > /etc/apt/sources.list.d/procursus.sources
+        echo "URIs: https://apt.procurs.us/" >> /etc/apt/sources.list.d/procursus.sources
+        echo "Suites: iphoneos-arm64/1700" >> /etc/apt/sources.list.d/procursus.sources
+        echo "Components: main" >> /etc/apt/sources.list.d/procursus.sources
+        
+        echo "Settings Up Procursus Source ..."
+        echo "Types: deb" > /etc/apt/sources.list.d/odyssey.sources
+        echo "URIs: https://repo.theodyssey.dev/" >> /etc/apt/sources.list.d/odyssey.sources
+        echo "Suites: ./" >> /etc/apt/sources.list.d/odyssey.sources
+        echo "Components:" >> /etc/apt/sources.list.d/odyssey.sources
 
 echo "Done. Running Firmware Configuration (./firmware.sh)"
 /usr/libexec/firmware
