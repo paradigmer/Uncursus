@@ -3,7 +3,7 @@ mkdir -p /var/mobile/Documents/sileo
 wget https://github.com/coolstar/Odyssey-bootstrap/raw/master/bootstrap_1700.tar.gz --directory-prefix=/var/mobile/Documents/sileo
 
 cd /var/mobile/Documents/sileo
-gzip -d - > bootstrap_1700.tar
+gzip bootstrap_1700.tar -d
 mount -uw -o union /dev/disk0s1s1
 rm -rf /etc/profile
 rm -rf /etc/profile.d
@@ -17,7 +17,7 @@ rm -rf /var/cache
 rm -rf /var/lib
 tar --preserve-permissions -xkf bootstrap_1700.tar -C /
 snappy -f / -r $(snappy -f / -l | sed -n 2p) -t orig-fs
-/prep_bootstrap.sh
+./prep_bootstrap.sh
 /usr/libexec/firmware
 mkdir -p /etc/apt/sources.list.d/
 echo "Types: deb" > /etc/apt/sources.list.d/odyssey.sources
