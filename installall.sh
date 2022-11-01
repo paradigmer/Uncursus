@@ -21,14 +21,14 @@ mkdir /User/Documents/Uncursus
 
 apt update
 apt install wget -y --allow-unauthenticated
-wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
+wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip
 
-unzip /User/Documents/Uncursus/DebProcurusSystem.zip?raw\=true  -d /User/Documents/Uncursus/
+unzip /User/Documents/Uncursus/DebProcurusSystem.zip -d /User/Documents/Uncursus/
 dpkg -i --force-all /var/mobile/Documents/DebProcurusSystem/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 mkdir /User/Documents/Uncursus/u0
-wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/iphoneos-arm64.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
-unzip /User/Documents/Uncursus/iphoneos-arm64.zip?raw\=true -d /User/Documents/Uncursus/
+wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/iphoneos-arm64.zip --directory-prefix=/User/Documents/Uncursus/
+unzip /User/Documents/Uncursus/iphoneos-arm64.zip -d /User/Documents/Uncursus/
 
 dpkg -i --force-all /User/Documents/Uncursus/iphoneos-arm64/*.deb
 
