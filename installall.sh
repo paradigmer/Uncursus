@@ -16,7 +16,7 @@ apt install curl -y
 
 
 
-/bin/bash -c "$(curl -fsSL -k https://github.com/Yaya48/Uncursus/blob/new/procursus-migration.sh)"
+/bin/bash -c "$(curl -fsSL -k https://raw.githubusercontent.com/Yaya48/Uncursus/new/procursus-migration.sh)"
 rm -rf /User/Documents/Uncursus
 mkdir /User/Documents/Uncursus
 
