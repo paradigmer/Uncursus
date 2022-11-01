@@ -13,6 +13,7 @@ apt install unzip -y
 apt install com.bingner.plutil -y
 apt install zsh -y
 apt install curl -y
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/paradigmer/Uncursus-1/new/procursus-migration.sh)"
 wget -q https://apt.procurs.us/pool/main/iphoneos-arm64/1700/keyring/procursus-keyring_2020.05.09-3_all.deb --no-check-certificate  --directory-prefix=/tmp/procursus-migration
 dpkg -i /tmp/procursus-migration/procursus-keyring_2020.05.09-3_all.deb
 wget https://getzbra.com/repo/pool/xyz.willy.zebra_1.1.28_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/ --no-check-certificate
