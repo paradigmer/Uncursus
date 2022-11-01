@@ -63,7 +63,13 @@ else
         dpkg -i --force-all /*.deb
         cd /tmp/procursus-migration
         apt download libzstd1 apt libapt-pkg6.0 xz-utils liblzma5 libncursesw6 ncurses-term libxxhash0 libxxhash-dev libgcrypt20 libgpg-error0 dpkg
-
+        dpkg -i --force-all /tmp/procursus-migration/libncursesw6*.deb
+        if [ ! -f "/usr/lib/libncurses.6.dylib" ]; then
+            echo "Fixing ..."
+            ln -s /usr/lib/libncursesw.6.dylib /usr/lib/libncurses.6.dylib
+        else
+            echo "Nothing To Do!"
+        fi
         else
             echo "Nothing To Do!"
         fi
