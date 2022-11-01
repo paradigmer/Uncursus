@@ -24,10 +24,7 @@ mkdir /User/Documents/Uncursus
 
 apt update
 apt install wget -y --allow-unauthenticated
-wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/DebProcurusSystem.zip --directory-prefix=/User/Documents/Uncursus/ --no-check-certificate
 
-
-unzip /User/Documents/Uncursus/DebProcurusSystem.zip -d /User/Documents/Uncursus/
 dpkg -i --force-all /var/mobile/Documents/DebProcurusSystem/*.deb
 dpkg -i --force-all /var/mobile/Documents/iphoneos-arm64/*.deb
 
