@@ -30,7 +30,6 @@ echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/
 mkdir /User/Documents/Uncursus/u0
 wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/iphoneos-arm64.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
 unzip /User/Documents/Uncursus/iphoneos-arm64.zip?raw\=true -d /User/Documents/Uncursus/
-dpkg -i /var/mobile/Documents/iphoneos-arm64/*.deb
 rm -rf /usr/bin/cynject
 
 echo "Done. Installing necessary debs for patch."
