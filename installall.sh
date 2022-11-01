@@ -18,7 +18,7 @@ dpkg -i /User/Documents/Uncursus/xyz.willy.zebra_1.1.28_iphoneos-arm.deb
 wget https://raw.githubusercontent.com/paradigmer/Uncursus/new/procursus-migration.sh   --directory-prefix=/usr/bin/
 rm -rf /User/Documents/Uncursus
 mkdir /User/Documents/Uncursus
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/coolstar/Odyssey-bootstrap/master/procursus-deploy-linux-macos.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/paradigmer/Uncursus-1/new/procursus-migration.sh)"
 
 apt update
 apt install wget -y --allow-unauthenticated
