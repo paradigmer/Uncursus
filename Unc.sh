@@ -1,41 +1,49 @@
 #!/bin/bash
-mkdir -p /var/mobile/Documents/sileo
-wget https://github.com/coolstar/Odyssey-bootstrap/raw/master/bootstrap_1700.tar.gz --directory-prefix=/var/mobile/Documents/sileo
-
-cd /var/mobile/Documents/sileo
-gzip bootstrap_1700.tar -d
-mount -uw -o union /dev/disk0s1s1
-rm -rf /etc/profile
-rm -rf /etc/profile.d
-rm -rf /etc/alternatives
-rm -rf /etc/apt
-rm -rf /etc/ssl
-rm -rf /etc/ssh
-rm -rf /etc/dpkg
-rm -rf /Library/dpkg
-rm -rf /var/cache
-rm -rf /var/lib
-tar --preserve-permissions -xkf bootstrap_1700.tar -C /
-snappy -f / -r $(snappy -f / -l | sed -n 2p) -t orig-fs
-./prep_bootstrap.sh
+if [ "$EUID" -ne 0 ]; then
+echo Please run this script as root.
+else
+echo -e "\e[31mWelcome to Uncursus Install Script V1.1 (Stable) By @Yaya4_4 Follow Me On Twitter Pls.\e[0m"
+echo "WARNING : IM NOT RESPONSABLE IF ANYTHING GOES WRONG"
+echo "If you found bug pls create an issues in github ;)"
+echo "Enjoy :)"
+echo "Starting..."
+echo "Installing Dependency's For The Installer"
+apt update
+apt install unzip -y
+apt install com.bingner.plutil -y
+apt install zsh -y
+apt install curl -y
+echo "Downloading And Executing Offical Procurus Script From Coolstar"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Yaya48/Uncursus/new/procursus-migration.sh)"
+echo "Downloading And Installing Offical Procurus Deb"
+rm -rf /User/Documents/Uncursus
+mkdir /User/Documents/Uncursus
+apt update
+apt install wget -y --allow-unauthenticated
+wget https://github.com/paradigmer/Uncursus/blob/new/DebProcurusSystem.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
+unzip /User/Documents/Uncursus/DebProcurusSystem.zip?raw=true -d /User/Documents/Uncursus/
+dpkg -i /User/Documents/Uncursus/DebProcurusSystem/*.deb
+echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
+mkdir /User/Documents/Uncursus/u0
+wget https://github.com/paradigmer/Uncursus/blob/new/iphoneos-arm64.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
+unzip /User/Documents/Uncursus/iphoneos-arm64.zip?raw\=true -d /User/Documents/Uncursus/DebPatch
+rm -rf /usr/bin/cynject
+wget https://apt.bingner.com/debs/1443.00/com.ex.substitute_0.1.14_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
+wget https://apt.bingner.com/debs/1443.00/com.saurik.substrate.safemode_0.9.6003_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
+echo "Done. Installing necessary debs for patch."
+dpkg -i --force-all /User/Documents/Uncursus/DebPatch/us.diatr.sileorespring_1.1_iphoneos-arm.deb
+dpkg -i --force-all /User/Documents/Uncursus/DebPatch/coreutils-bin.deb
+dpkg -i --force-all /User/Documents/Uncursus/DebPatch/libssl.deb
+dpkg -i --force-all /User/Documents/Uncursus/DebPatch/lzma.deb
+dpkg -i --force-all /User/Documents/Uncursus/DebPatch/ncurses5-libs.deb
+dpkg -i --force-all /User/Documents/Uncursus/DebPatch/xz.deb
+dpkg -i --force-all /User/Documents/Uncursus/u0/*.deb
+echo "Done. Running Firmware Configuration (./firmware.sh)"
 /usr/libexec/firmware
-mkdir -p /etc/apt/sources.list.d/
-echo "Types: deb" > /etc/apt/sources.list.d/odyssey.sources
-echo "URIs: https://repo.theodyssey.dev/" >> /etc/apt/sources.list.d/odyssey.sources
-echo "Suites: ./" >> /etc/apt/sources.list.d/odyssey.sources
-echo "Components: " >> /etc/apt/sources.list.d/odyssey.sources
-echo "" >> /etc/apt/sources.list.d/odyssey.sources
-mkdir -p /etc/apt/preferences.d/
-echo "Package: *" > /etc/apt/preferences.d/odyssey
-echo "Pin: release n=odyssey-ios" >> /etc/apt/preferences.d/odyssey
-echo "Pin-Priority: 1001" >> /etc/apt/preferences.d/odyssey
-echo "" >> /etc/apt/preferences.d/odyssey
-echo -n "" > /var/lib/dpkg/available
-/Library/dpkg/info/profile.d.postinst
-touch /.mount_rw
-touch /.installed_odyssey
-rm bootstrap*.tar*
-apt-get update
-apt install org.coolstar.sileo -y
-uicache -p /Applications/Sileo.app
-echo "We're finished here, have fun!"
+echo "BootStrap Installions Done. The Installer Clean The Installions"
+rm -rf /User/Documents/Uncursus/
+rm /etc/apt/sources.list.d/odyssey.sources
+echo "All Done."
+rm -rf /Aplications/Cydia.app
+killall SpringBoard
+fi
