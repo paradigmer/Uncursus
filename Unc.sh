@@ -35,7 +35,6 @@ echo "Done. Installing necessary debs for patch."
 dpkg -i --force-all /User/Documents/Uncursus/DebPatch/coreutils-bin.deb
 dpkg -i --force-all /User/Documents/Uncursus/DebPatch/libssl1.0_1_2_iphoneos-arm.deb
 dpkg -i --force-all /User/Documents/Uncursus/DebPatch/lzma_5_4_iphoneos-arm.deb.deb
-dpkg -i --force-all /User/Documents/Uncursus/DebPatch/essential-dummy.deb
 dpkg -i --force-all /User/Documents/Uncursus/DebPatch/xz_2_2_iphoneos-arm.deb
 dpkg -i --force-all /User/Documents/Uncursus/DebPatch/libidn2.deb
 dpkg -i --force-all /User/Documents/Uncursus/u0/*.deb
