@@ -16,8 +16,7 @@ apt install curl -y
 echo "Downloading And Executing Offical Procurus Script From Coolstar"
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/paradigmer/Uncursus/new/procursus-deploy-linux-macos.sh)"
 echo "Downloading And Installing Offical Procurus Deb"
-rm -rf /User/Documents/Uncursus
-mkdir /User/Documents/Uncursus
+
 apt update
 apt install wget -y --allow-unauthenticated
 wget https://github.com/paradigmer/Uncursus/blob/new/DebProcurusSystem.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
@@ -28,22 +27,20 @@ mkdir /User/Documents/Uncursus/u0
 wget https://github.com/paradigmer/Uncursus/blob/new/iphoneos-arm64.zip?raw=true --directory-prefix=/User/Documents/Uncursus/
 unzip /User/Documents/Uncursus/iphoneos-arm64.zip?raw\=true -d /User/Documents/Uncursus/DebPatch
 rm -rf /usr/bin/cynject
-wget https://apt.bingner.com/debs/1443.00/com.ex.substitute_0.1.14_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
-wget https://apt.bingner.com/debs/1443.00/com.saurik.substrate.safemode_0.9.6003_iphoneos-arm.deb --directory-prefix=/User/Documents/Uncursus/u0
 echo "Done. Installing necessary debs for patch."
 
-dpkg -i --force-all /User/Documents/Uncursus/DebPatch/coreutils-bin.deb
-dpkg -i --force-all /User/Documents/Uncursus/DebPatch/libssl1.0_1_2_iphoneos-arm.deb
-dpkg -i --force-all /User/Documents/Uncursus/DebPatch/lzma_5_4_iphoneos-arm.deb.deb
-dpkg -i --force-all /User/Documents/Uncursus/DebPatch/xz_2_2_iphoneos-arm.deb
-dpkg -i --force-all /User/Documents/Uncursus/DebPatch/libidn2.deb
-dpkg -i --force-all /User/Documents/Uncursus/u0/*.deb
+dpkg -i --force-all /var/mobile/Documents/DebPatch/coreutils-bin.deb
+dpkg -i --force-all /var/mobile/Documents/DebPatch/libssl.deb
+dpkg -i --force-all /var/mobile/Documents/DebPatch/lzma.deb
+dpkg -i --force-all /var/mobile/Documents/DebPatch/xz.deb
+dpkg -i --force-all /var/mobile/Documents/DebPatch/libidn2.deb
+dpkg -i --force-all /var/mobile/Documents/DebPatch/ncurses5-libs.deb
 echo "Done. Running Firmware Configuration (./firmware.sh)"
 /usr/libexec/firmware
 echo "BootStrap Installions Done. The Installer Clean The Installions"
-rm -rf /User/Documents/Uncursus/
+
 rm /etc/apt/sources.list.d/odyssey.sources
 echo "All Done."
-rm -rf /Aplications/Cydia.app
+
 killall SpringBoard
 fi
