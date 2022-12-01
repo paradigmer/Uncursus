@@ -42,15 +42,15 @@ else
         rm -rf /tmp/procursus-migration
         mkdir /tmp/procursus-migration
         cd /tmp/procursus-migration
-        wget -q https://apt.procurs.us/pool/main/iphoneos-arm64/${CFVER}/procursus-keyring_2020.05.09-3_all.deb --no-check-certificate
-        dpkg -i procursus-keyring_2020.05.09-3_all.deb
+        wget -q https://procurs.us/pool/main/iphoneos-arm64/1700/keyring/procursus-keyring_2020.05.09-3_all.deb -d /tmp/procursus-migration --no-check-certificate
+        dpkg -i *.deb
         apt update
         rm -rf /tmp/zstd-support/
         mkdir /tmp/zstd-support/
         cd /tmp/zstd-support/
         apt download libintl8 liblzma5 lz4 xz liblz4-1 xz-utils
-        wget -q https://apt.procurs.us/pool/main/iphoneos-arm64/${CFVER}/libzstd1_1.5.2_iphoneos-arm.deb --no-check-certificate
-        wget -q https://apt.procurs.us/pool/main/iphoneos-arm64/${CFVER}/zstd_1.5.2_iphoneos-arm.deb --no-check-certificate
+        wget -q https://procurs.us/pool/main/iphoneos-arm64/1700/libzstd1_1.5.2_iphoneos-arm.deb --no-check-certificate
+        wget -q https://procurs.us/pool/main/iphoneos-arm64/1700/zstd_1.5.2_iphoneos-arm.deb --no-check-certificate
         dpkg -i --force-all *.deb
         cd /tmp/procursus-migration
         apt download libzstd1 apt libapt-pkg6.0 xz-utils liblzma5 libncursesw6 ncurses-term libxxhash0 libxxhash-dev libgcrypt20 libgpg-error0 dpkg
