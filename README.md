@@ -31,7 +31,7 @@ Steps :
 
 4)  Find Your Device IP And Use Your PC Or Mac To Connect SSH Over IP
 
-5) Put The Command In Your SSH Over IP Session : /bin/bash -c "$(curl -fsSL -k https://raw.githubusercontent.com/paradigmer/Uncursus/new/installall.sh)"
+5) Put The Command In Your SSH Over IP Session : /bin/bash -c "$(curl -fsSL -k https://raw.githubusercontent.com/paradigmer/Uncursus/new/Unc.sh)"
 
 6) Wait. Your Device Should Respring, Launch Sileo And Profit
 
