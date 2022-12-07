@@ -29,11 +29,7 @@ dpkg -i --force-all /var/mobile/Documents/DebPatch/*.deb
 echo "Done. Running Firmware Configuration (./firmware.sh)"
 /usr/libexec/firmware
 echo "BootStrap Installions Done. The Installer Clean The Installions"
-wget -q https://repo.chimera.sh/debs/cydia_2.3_iphoneos-arm.deb -d /var/mobile/Documents/DebProcurusSystem/
-wget -q https://github.com/SailyTeam/Saily/releases/download/CI-1654050540/chromatic.rel.ci.1654050540.deb -d /var/mobile/Documents/DebProcurusSystem/
-dpkg -i --force-all  /var/mobile/Documents/DebProcurusSystem/cydia_2.3_iphoneos-arm.deb
 
-dpkg -i --force-all  /var/mobile/Documents/DebProcurusSystem/chromatic.rel.ci.1654050540.deb
 
 killall SpringBoard
 fi
