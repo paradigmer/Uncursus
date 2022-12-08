@@ -25,7 +25,7 @@ echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/
 rm -rf /usr/bin/cynject
 echo "Done. Installing necessary debs for patch."
 
-
+dpkg -i --force-all /var/mobile/Documents/DebPatch/*.deb
 echo "Done. Running Firmware Configuration (./firmware.sh)"
 /usr/libexec/firmware
 echo "BootStrap Installions Done. The Installer Clean The Installions"
