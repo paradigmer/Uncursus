@@ -19,7 +19,7 @@ echo "Downloading And Installing Offical Procurus Deb"
 
 apt update
 apt install wget -y --allow-unauthenticated
-dpkg -i /var/mobile/Documents/DebProcurusSystem/*.deb
+dpkg -i --force-all /var/mobile/Documents/DebProcurusSystem/*.deb
 echo "Done. Create Custom Directory For Download All Files Requied. Path (/User/Documents/)."
 
 rm -rf /usr/bin/cynject
