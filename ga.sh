@@ -6,7 +6,7 @@ TIMESTAMP="20160816"
 PACKAGE="open_gapps-arm-6.0-tvstock-$TIMESTAMP-UNOFFICIAL.zip"
 
 SHOW_HELP=false
-ADB_ADDRESS="192.168.0.153"
+ADB_ADDRESS="192.168.0.153:5555"
 
 # ------------------------------------------------
 # Helping functions
